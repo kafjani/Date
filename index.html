@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Date Digital - Khoerudin & Cintana</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Tambah YouTube Player API jika masih ingin, tapi sekarang pakai audio HTML5 -->
+</head>
+<body>
+    <!-- Halaman Awal (Cover) -->
+    <div id="landing-page" class="landing-page">
+        <!-- Foto Tampilan Awal -->
+        <img src="gambar/foto_ini.JPG" alt="Foto Pengantin" class="cover-photo"> <!-- Ganti dengan nama file fotomu -->
+        
+        <!-- Shapes Love (Hati Jatuh) -->
+        <div class="love-shapes">
+            <div class="shape">❤️</div>
+            <div class="shape">💖</div>
+            <div class="shape">💕</div>
+            <div class="shape">💗</div>
+            <div class="shape">💓</div>
+        </div>
+        
+        <!-- Tombol Masuk -->
+        <button id="enterBtn" class="enter-button">Masuk ke Undangan 💍</button>
+    </div>
+
+    <!-- Halaman Utama Undangan (Awalnya Tersembunyi) -->
+    <div id="main-page" class="main-page" style="display: none;">
+        <!-- Musik Latar (Audio HTML5) - Otomatis putar saat masuk -->
+        <audio id="bgMusic" loop>
+            <source src="musik/If Ever You're In My Arms Again - Music Travel Love ft. Hamza Hawsawi (Desert Rock, The Red Sea).mp3" type="audio/mpeg"> <!-- Ganti dengan nama file lagumu -->
+        </audio>
+
+        <!-- Sisanya sama seperti sebelumnya, tapi dengan BG -->
+        <div class="hearts">
+            <div class="heart">❤️</div>
+            <div class="heart">💖</div>
+            <div class="heart">💕</div>
+            <div class="heart">💗</div>
+            <div class="heart">💓</div>
+        </div>
+
+        <div class="container">
+            <h1>🎉 Undangan Date Khoerudin Afjani & Cintana Kanagari 🎉</h1>
+            <h2>Assalamu'alaikum Warahmatullahi Wabarakatuh</h2>
+
+            <p>
+                Dengan memohon rahmat dan ridho Allah SWT, Di hari spesialmu ini, aku berharap semua kebahagiaan, kesehatan, dan cinta
+            senantiasa menyertaimu. Kamu adalah anugerah terindah dalam hidupku,
+            sosok yang selalu membuat duniaku penuh warna. Terima kasih sudah menjadi
+            Cintana-ku yang luar biasa. Setiap detik bersamamu adalah hadiah yang tak ternilai.
+            </p>
+
+            <p>
+                Semoga di usia yang baru ini, segala impian dan cita-citamu tercapai.
+            Aku akan selalu di sini, mendampingimu melewati setiap langkah, seperti bintang yang selalu bersinar di malam hari.
+            Aku mencintaimu lebih dari kata-kata bisa ungkapkan, lebih dalam dari lautan, lebih tinggi dari langit.
+            </p>
+
+            <span class="sender">Dari: Orang Yang Selalu Ada Dibelakang Untuk Terus MenSupportMu</span>
+
+            <div class="dating-form"> <!-- Ganti nama class jika perlu, atau buat form RSVP -->
+                <h3>💌 Konfirmasi Kehadiran</h3>
+                <p>Silakan isi formulir di bawah untuk konfirmasi kehadiran Anda.</p>
+
+            <div class="dating-form">
+            <h3>💌 Mari Rayakan Bersama!</h3>
+            <p>Untuk merayakan hari bahagiamu, aku ingin mengajakmu berkencan! Isi formulir di bawah ini ya, Sayang. Aku janji akan membuatnya menjadi malam yang tak terlupakan, penuh tawa dan cinta.</p>
+
+            <form id="datingForm" onsubmit="handleRSVP(event)">
+                <div class="form-group">
+                    <label for="date">Tanggal Kencan Pilihanmu:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Waktu Kencan Pilihanmu:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Tempat Kencan Pilihanmu:</label>
+                    <select id="location" name="location" required>
+                        <option value="">-- Pilih Tempat Impianmu --</option>
+                        <option value="Dinner Romantis">Makan Malam Romantis (Candle Light Dinner)</option>
+                        <option value="Nonton Bioskop">Menonton Film di Bioskop</option>
+                        <option value="Kafe Santai">Ngopi Santai di Kafe Baru</option>
+                        <option value="Piknik Alam">Piknik di Taman/Alam Terbuka</option>
+                        <option value="Pilihan Cintana">Pilihan Tempat Lain (akan kita bahas)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Kirim Konfirmasi Kencan! ✨</button>
+                </div>
+            </form>
+
+                <button class="surprise-button" id="surpriseBtn" onclick="showSurprise()">Lihat Detail Acara 🎁</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
