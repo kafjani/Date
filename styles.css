@@ -1,0 +1,399 @@
+/* Reset dan Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Styling Halaman Awal (Landing Page) */
+.landing-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a8edea 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 1s ease-in-out;
+    text-align: center;
+}
+
+.cover-photo {
+    max-width: 300px;
+    max-height: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    margin-bottom: 30px;
+    border: 5px solid rgba(255,255,255,0.8);
+    transition: transform 0.3s ease;
+}
+
+.cover-photo:hover {
+    transform: scale(1.05);
+}
+
+.love-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    font-size: 2.5em;
+    animation: fallLove 8s linear infinite;
+    opacity: 0.7;
+}
+
+.shape:nth-child(1) { left: 10%; animation-delay: 0s; }
+.shape:nth-child(2) { left: 25%; animation-delay: 1.5s; }
+.shape:nth-child(3) { left: 40%; animation-delay: 3s; }
+.shape:nth-child(4) { left: 60%; animation-delay: 4.5s; }
+.shape:nth-child(5) { left: 75%; animation-delay: 6s; }
+.shape:nth-child(6) { left: 90%; animation-delay: 7.5s; }
+
+.enter-button {
+    background: linear-gradient(45deg, #e91e63, #f06292);
+    color: white;
+    padding: 18px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.enter-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.enter-button:hover::before {
+    left: 100%;
+}
+
+.enter-button:hover {
+    background: linear-gradient(45deg, #c2185b, #e91e63);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(233, 30, 99, 0.4);
+}
+
+.enter-button:active {
+    transform: translateY(-1px);
+}
+
+/* Halaman Utama dengan BG */
+.main-page {
+    background-image: url('gambar/bg.JPEG');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.main-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1;
+}
+
+/* Hearts Animation */
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    font-size: 2em;
+    animation: floatHeart 6s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+.heart:nth-child(1) { left: 15%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 35%; animation-delay: 1s; }
+.heart:nth-child(3) { left: 55%; animation-delay: 2s; }
+.heart:nth-child(4) { left: 75%; animation-delay: 3s; }
+.heart:nth-child(5) { left: 95%; animation-delay: 4s; }
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 3;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+h1 {
+    color: #e91e63;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    background: linear-gradient(45deg, #e91e63, #f06292);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2 {
+    color: #3f51b5;
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #555;
+    text-align: justify;
+}
+
+.sender {
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+    font-style: italic;
+    font-weight: 600;
+    color: #e91e63;
+    font-size: 1.1em;
+}
+
+/* Form Styling */
+.dating-form {
+    background: linear-gradient(135deg, rgba(255,182,193,0.1), rgba(255,192,203,0.1));
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 40px;
+    border: 2px solid rgba(233, 30, 99, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.dating-form h3 {
+    color: #e91e63;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.dating-form p {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 1em;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+    background: rgba(255,255,255,0.9);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #e91e63;
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+}
+
+.form-group button {
+    background: linear-gradient(45deg, #4caf50, #66bb6a);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.form-group button:hover {
+    background: linear-gradient(45deg, #388e3c, #4caf50);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+/* Surprise Button */
+.surprise-button {
+    background: linear-gradient(45deg, #ff9800, #ffb74d);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+.surprise-button:hover {
+    background: linear-gradient(45deg, #f57c00, #ff9800);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+}
+
+/* Keyframes untuk animasi */
+@keyframes fallLove {
+    0% {
+        transform: translateY(-120vh) rotate(0deg) scale(1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(120vh) rotate(360deg) scale(0.8);
+        opacity: 0;
+    }
+}
+
+@keyframes floatHeart {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 0.8;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .cover-photo {
+        max-width: 250px;
+        max-height: 300px;
+    }
+
+    .enter-button {
+        padding: 15px 30px;
+        font-size: 1.1em;
+    }
+
+    .dating-form {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .cover-photo {
+        max-width: 200px;
+        max-height: 250px;
+    }
+
+    .enter-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .container {
+        padding: 15px;
+        margin: 10px;
+    }
+}
